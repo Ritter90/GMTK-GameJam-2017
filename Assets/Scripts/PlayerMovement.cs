@@ -11,6 +11,7 @@ public class PlayerMovement : MonoBehaviour {
     public float maxSpeed = 5f;
     public float jumpForce = 1000f;
     public bool jump;
+    public float directionFlipThreshold = 0.01f;
 
     private Transform groundCheck;
     public bool grounded = false;
@@ -59,9 +60,12 @@ public class PlayerMovement : MonoBehaviour {
 
     private void EvaluatePlayerDirection(float horizonatalInput)
     {
-        Vector3 scale = transform.localScale;
-        scale.x = Mathf.Sign(playerRigidbody.velocity.x);
-        transform.localScale = scale;
+        if(Mathf.Abs(playerRigidbody.velocity.x) > directionFlipThreshold)
+        {
+            Vector3 scale = transform.localScale;
+            scale.x = Mathf.Sign(playerRigidbody.velocity.x);
+            transform.localScale = scale;
+        }
     }
 
     private void EvaluateJump()
