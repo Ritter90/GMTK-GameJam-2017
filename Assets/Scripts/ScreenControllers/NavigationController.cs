@@ -1,6 +1,4 @@
-﻿using System;
-
-public static class NavigationController
+﻿public static class NavigationController
 {
     private static MainMenuScreenController mainMenu;
     private static CreditsScreenController credits;
@@ -20,13 +18,13 @@ public static class NavigationController
 
     }
 
-    internal static void CreditsButtonClicked()
+    public static void CreditsButtonClicked()
     {
         mainMenu.gameObject.SetActive(false);
         credits.gameObject.SetActive(true);
     }
 
-    internal static void LeaveCreditsScreen()
+    public static void LeaveCreditsScreen()
     {
         credits.gameObject.SetActive(false);
         mainMenu.gameObject.SetActive(true);

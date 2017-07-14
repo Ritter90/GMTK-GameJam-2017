@@ -1,9 +1,7 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class BaseScreenController : MonoBehaviour {
-
+public class BaseScreenController : MonoBehaviour
+{
     protected virtual void Awake()
     {
         RectTransform rect = gameObject.GetComponent<RectTransform>();
