@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class PlayerMovement : MonoBehaviour {
-
-
+public class PlayerMovement : MonoBehaviour
+{
     //Player Movement Variables
     public float moveForce = 365f;
     public float maxSpeed = 5f;
