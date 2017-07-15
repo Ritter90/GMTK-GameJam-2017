@@ -12,7 +12,11 @@ public class PlayerActionManager : MonoBehaviour {
 
     private float throwForce = 500f;
     private float dropForce = 250f;
+    private float hitForce = 500f;
     private Player playerInfo;
+
+    public Transform startPunch;
+    public Transform endPunch;
 
     public Vector2 ThrowForceVector
     {
@@ -22,6 +26,11 @@ public class PlayerActionManager : MonoBehaviour {
     public Vector2 DropForceVector
     {
         get { return new Vector2(0, 1) * dropForce; }
+    }
+
+    public Vector2 HitForceVector
+    {
+        get { return new Vector2(hitForce * Mathf.Sign(gameObject.transform.localScale.x), hitForce); }
     }
 
     void Awake()
@@ -40,7 +49,11 @@ public class PlayerActionManager : MonoBehaviour {
             }
             else if (pickup != null)
             {
-                ReleasePickup(ThrowForceVector, true);
+                ReleasePickup(true, true);
+            }
+            else
+            {
+                Punch();
             }
         }
 	}
@@ -49,7 +62,21 @@ public class PlayerActionManager : MonoBehaviour {
     {
         if (pickup != null)
         {
-            ReleasePickup(DropForceVector, false);
+            ReleasePickup(false, false);
+        }
+    }
+
+    private void Punch()
+    {
+        RaycastHit2D hitInfo = Physics2D.Linecast(startPunch.position, endPunch.position, 1 << LayerMask.NameToLayer("Player"));
+        
+        if (hitInfo.collider != null)
+        {
+            IHittable hittable = hitInfo.collider.gameObject.GetComponent<IHittable>();
+            if(hittable != null)
+            {
+                hittable.Hit(HitForceVector);
+            }
         }
     }
 
@@ -61,13 +88,22 @@ public class PlayerActionManager : MonoBehaviour {
         }
     }
 
-    private void ReleasePickup(Vector2 force, bool makeDangerous)
+    private void ReleasePickup(bool isThrown, bool makeDangerous)
     {
         ReleasePickupTransform();
         EnablePickupRigidbody();
         pickup.gameObject.tag = "Pickup";
-        pickup.transform.position = new Vector2(pickup.transform.position.x + (.5f * Mathf.Sign(gameObject.transform.localScale.x)), pickup.transform.position.y);
-        pickup.GetComponent<Rigidbody2D>().AddForce(force);
+        if(isThrown)
+        {
+            pickup.transform.position = new Vector2(pickup.transform.position.x + (.5f * Mathf.Sign(gameObject.transform.localScale.x)), pickup.transform.position.y);
+            pickup.GetComponent<Rigidbody2D>().AddForce(ThrowForceVector);
+        }
+        else
+        {
+            pickup.transform.position = new Vector2(pickup.transform.position.x, pickup.transform.position.y + .5f);
+            pickup.GetComponent<Rigidbody2D>().AddForce(DropForceVector);
+        }
+        
         if(makeDangerous)
         {
             SetPickupDangerousIfIDangerous();
