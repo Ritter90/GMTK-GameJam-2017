@@ -9,6 +9,7 @@ public class BaseKey: MonoBehaviour
         if (openable != null)
         {
             openable.Open();
+            Destroy(gameObject);
         }
     }
 }

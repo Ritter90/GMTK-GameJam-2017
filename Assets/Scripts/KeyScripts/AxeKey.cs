@@ -1,8 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-public class AxeKey : BaseKey
+﻿public class AxeKey : BaseKey
 {
-
+    //TODO: Add AxeKey Specific Functionalilty
 }
