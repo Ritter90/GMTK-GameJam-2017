@@ -40,7 +40,7 @@ GameObject:
   - component: {fileID: 4279780789993940}
   - component: {fileID: 212975931489543536}
   m_Layer: 0
-  m_Name: New Sprite (1)
+  m_Name: Legs
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -56,7 +56,7 @@ GameObject:
   - component: {fileID: 4458650723761950}
   - component: {fileID: 212745192679982024}
   m_Layer: 0
-  m_Name: New Sprite
+  m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -87,7 +87,7 @@ GameObject:
   - component: {fileID: 4046375870383262}
   - component: {fileID: 212444227245662566}
   m_Layer: 0
-  m_Name: New Sprite (2)
+  m_Name: Forward
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
