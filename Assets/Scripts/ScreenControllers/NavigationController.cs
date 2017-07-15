@@ -2,6 +2,8 @@
 {
     private static MainMenuScreenController mainMenu;
     private static CreditsScreenController credits;
+    private static IntroScrollerController isc;
+
 
     public static MainMenuScreenController MainMenu
     {
@@ -11,6 +13,11 @@
     public static CreditsScreenController Credits
     {
         set { credits = value; }
+    }
+
+    public static IntroScrollerController ISC
+    {
+        set { isc = value;}
     }
 
     public static void PlayButtonClicked()
@@ -29,4 +36,12 @@
         credits.gameObject.SetActive(false);
         mainMenu.gameObject.SetActive(true);
     }
+
+    public static void LeaveIntroScroller()
+    {
+        isc.gameObject.SetActive(false);
+        mainMenu.gameObject.SetActive(true);
+    }
+
+
 }
