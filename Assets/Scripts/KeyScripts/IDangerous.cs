@@ -1,0 +1,4 @@
+﻿interface IDangerous
+{
+    void SetDangerous();
+}

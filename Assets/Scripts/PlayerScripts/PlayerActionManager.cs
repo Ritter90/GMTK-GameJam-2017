@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 public class PlayerActionManager : MonoBehaviour {
 
@@ -6,11 +7,22 @@ public class PlayerActionManager : MonoBehaviour {
     private GameObject pickupHolder;
     private float pickupRadius = .75f;
 
-    private GameObject pickup;
+    public GameObject pickup;
     private Rigidbody2D pickupsRigidBody;
 
-    public float throwForce = 100f;
-    public Player playerInfo;
+    private float throwForce = 500f;
+    private float dropForce = 250f;
+    private Player playerInfo;
+
+    public Vector2 ThrowForceVector
+    {
+        get { return new Vector2(throwForce * Mathf.Sign(gameObject.transform.localScale.x), 0); }
+    }
+
+    public Vector2 DropForceVector
+    {
+        get { return new Vector2(0, 1) * dropForce; }
+    }
 
     void Awake()
     {
@@ -28,10 +40,18 @@ public class PlayerActionManager : MonoBehaviour {
             }
             else if (pickup != null)
             {
-                ThrowPickup();
+                ReleasePickup(ThrowForceVector, true);
             }
         }
 	}
+
+    public void DropPickup()
+    {
+        if (pickup != null)
+        {
+            ReleasePickup(DropForceVector, false);
+        }
+    }
 
     private void OnCollisionEnter2D(Collision2D coll)
     {
@@ -41,13 +61,17 @@ public class PlayerActionManager : MonoBehaviour {
         }
     }
 
-    private void ThrowPickup()
+    private void ReleasePickup(Vector2 force, bool makeDangerous)
     {
         ReleasePickupTransform();
         EnablePickupRigidbody();
         pickup.gameObject.tag = "Pickup";
         pickup.transform.position = new Vector2(pickup.transform.position.x + (.5f * Mathf.Sign(gameObject.transform.localScale.x)), pickup.transform.position.y);
-        pickup.GetComponent<Rigidbody2D>().AddForce(new Vector2(throwForce * Mathf.Sign(gameObject.transform.localScale.x), 0));
+        pickup.GetComponent<Rigidbody2D>().AddForce(force);
+        if(makeDangerous)
+        {
+            SetPickupDangerousIfIDangerous();
+        }
         pickup = null;
     }
 
@@ -94,5 +118,15 @@ public class PlayerActionManager : MonoBehaviour {
             }
         }
         return null;
+    }
+
+    private void SetPickupDangerousIfIDangerous()
+    {
+        IDangerous dangerousPickup = pickup.GetComponent<IDangerous>();
+
+        if (dangerousPickup != null)
+        {
+            dangerousPickup.SetDangerous();
+        }
     }
 }
