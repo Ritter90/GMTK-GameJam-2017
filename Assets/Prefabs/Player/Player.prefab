@@ -19,10 +19,12 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4523079642503062}
+  - component: {fileID: 114619201661720352}
   - component: {fileID: 114099714693663832}
   - component: {fileID: 50207131711017050}
   - component: {fileID: 58222309151650796}
   - component: {fileID: 61287592537638280}
+  - component: {fileID: 114308300323562278}
   m_Layer: 9
   m_Name: Player
   m_TagString: Untagged
@@ -241,6 +243,31 @@ MonoBehaviour:
   jump: 0
   directionFlipThreshold: 0.01
   grounded: 0
+--- !u!114 &114308300323562278
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1024221331560724}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12dc45efb50f9cf4a8f9789648e0b83d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pickupHolder: {fileID: 1920901408099134}
+  throwForce: 500
+--- !u!114 &114619201661720352
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1024221331560724}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06b60150d9817c04b90cdbe0a5124705, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerNumber: 0
 --- !u!212 &212444227245662566
 SpriteRenderer:
   m_ObjectHideFlags: 1

@@ -15,18 +15,20 @@ public class PlayerMovement : MonoBehaviour
     public bool grounded = false;
 
     private Rigidbody2D playerRigidbody;
+    private Player playerInfo;
 
     void Awake()
     {
         groundCheck = transform.Find("groundCheck");
         playerRigidbody = GetComponent<Rigidbody2D>();
+        playerInfo = GetComponent<Player>();
     }
 
     void Update()
     {
         grounded = Physics2D.Linecast(transform.position, groundCheck.position, 1 << LayerMask.NameToLayer("Ground"));
 
-        if(Input.GetButtonDown("Jump") && grounded)
+        if(InputManager.GetJumpInput(playerInfo.playerNumber) && grounded)
         {
             jump = true;
         }
@@ -34,7 +36,7 @@ public class PlayerMovement : MonoBehaviour
 
     void FixedUpdate()
     {
-        float horizonatalInput = Input.GetAxis("Horizontal");
+        float horizonatalInput = InputManager.GetHorizontalInput(playerInfo.playerNumber);
 
         MovePlayer(horizonatalInput);
 

@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class PlayerActionManager : MonoBehaviour {
 
@@ -13,10 +10,16 @@ public class PlayerActionManager : MonoBehaviour {
     private Rigidbody2D pickupsRigidBody;
 
     public float throwForce = 100f;
+    public Player playerInfo;
+
+    void Awake()
+    {
+        playerInfo = GetComponent<Player>();
+    }
 
     void Update ()
     {
-        if (Input.GetButtonDown("Action"))
+        if (InputManager.GetActionInput(playerInfo.playerNumber))
         {
             GameObject inRangePickup = getPickupInRange();
             if (pickup == null && inRangePickup != null)
@@ -65,7 +68,6 @@ public class PlayerActionManager : MonoBehaviour {
     private void DisablePickupRigidbody(GameObject newPickup)
     {
         newPickup.GetComponent<BoxCollider2D>().enabled = false;
-        //pickupsRigidBody = newPickup.GetComponent<Rigidbody2D>();
         Destroy(newPickup.GetComponent<Rigidbody2D>());
     }
 
