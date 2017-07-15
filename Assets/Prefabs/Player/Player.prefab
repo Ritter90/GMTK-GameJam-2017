@@ -27,7 +27,7 @@ GameObject:
   - component: {fileID: 114308300323562278}
   m_Layer: 9
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -256,6 +256,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pickupHolder: {fileID: 1920901408099134}
   throwForce: 500
+  playerInfo: {fileID: 0}
 --- !u!114 &114619201661720352
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -268,6 +269,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerNumber: 0
+  spawnLocation: {x: 0, y: 0, z: 0}
 --- !u!212 &212444227245662566
 SpriteRenderer:
   m_ObjectHideFlags: 1
