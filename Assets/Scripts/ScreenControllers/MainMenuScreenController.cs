@@ -13,6 +13,8 @@ public class MainMenuScreenController : BaseScreenController
 
         playButton.onClick.AddListener(PlayButtonClicked);
         creditsButton.onClick.AddListener(CreditsButtonClicked);
+        
+        gameObject.SetActive(false);
     }
 
     private void PlayButtonClicked()
