@@ -49,23 +49,12 @@ public class PlayerMovement : MonoBehaviour
 
         if (horizonatalInput != 0)
         {
-            //if (horizonatalInput * playerRigidbody.velocity.x < maxSpeed)
-            //{
-            //    playerRigidbody.AddForce(Vector2.right * horizonatalInput * moveForce);
-            //}
-
-            //if (Mathf.Abs(playerRigidbody.velocity.x) > maxSpeed)
-            //{
-            //    playerRigidbody.velocity = new Vector2(Mathf.Sign(playerRigidbody.velocity.x) * maxSpeed, playerRigidbody.velocity.y);
-            //}
-
             if (Mathf.Abs(playerRigidbody.velocity.x + (acceleration * Time.fixedDeltaTime * horizonatalInput)) > maxSpeed)
             {
                 playerRigidbody.velocity = new Vector2(maxSpeed * Mathf.Sign(playerRigidbody.velocity.x), playerRigidbody.velocity.y);
             }
             else
             {
-                //playerRigidbody.velocity = new Vector2((playerRigidbody.velocity.x + (acceleration * Time.fixedDeltaTime * horizonatalInput)) * Mathf.Sign(playerRigidbody.velocity.x), playerRigidbody.velocity.y);
                 playerRigidbody.velocity = new Vector2(playerRigidbody.velocity.x + (acceleration * Time.fixedDeltaTime * horizonatalInput), playerRigidbody.velocity.y);
             }
         }
