@@ -11,6 +11,7 @@ public class Player : MonoBehaviour, IKillable
 
     public void Kill()
     {
+        gameObject.GetComponent<PlayerActionManager>().DropPickup();
         transform.position = spawnLocation;
     }
 }

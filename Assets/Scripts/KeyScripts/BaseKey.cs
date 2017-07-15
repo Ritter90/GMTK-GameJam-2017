@@ -1,8 +1,14 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
-public class BaseKey: MonoBehaviour
+public class BaseKey: MonoBehaviour, IDangerous
 {
-    public bool dangerous;
+    private bool dangerous;
+
+    public void SetDangerous()
+    {
+        dangerous = true;
+    }
 
     protected void OnCollisionEnter2D(Collision2D coll)
     {
