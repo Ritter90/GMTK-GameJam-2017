@@ -4,6 +4,8 @@ public class PlayerMovement : MonoBehaviour
 {
     //Player Movement Variables
     public float moveForce = 365f;
+    public float acceleration = 4f;
+    public float slowRate = 2f;
     public float maxSpeed = 5f;
     public float jumpForce = 1000f;
     public bool jump;
@@ -43,15 +45,30 @@ public class PlayerMovement : MonoBehaviour
 
     private void MovePlayer(float horizonatalInput)
     {
-        if (horizonatalInput * playerRigidbody.velocity.x < maxSpeed)
-        {
-            playerRigidbody.AddForce(Vector2.right * horizonatalInput * moveForce);
-        }
+        float playerSpeed = Mathf.Abs(playerRigidbody.velocity.x);
 
-        if (Mathf.Abs(playerRigidbody.velocity.x) > maxSpeed)
+        if (horizonatalInput != 0)
         {
-            playerRigidbody.velocity = new Vector2(Mathf.Sign(playerRigidbody.velocity.x) * maxSpeed, playerRigidbody.velocity.y);
+            if (Mathf.Abs(playerRigidbody.velocity.x + (acceleration * Time.fixedDeltaTime * horizonatalInput)) > maxSpeed)
+            {
+                playerRigidbody.velocity = new Vector2(maxSpeed * Mathf.Sign(playerRigidbody.velocity.x), playerRigidbody.velocity.y);
+            }
+            else
+            {
+                playerRigidbody.velocity = new Vector2(playerRigidbody.velocity.x + (acceleration * Time.fixedDeltaTime * horizonatalInput), playerRigidbody.velocity.y);
+            }
         }
+        else
+        {
+            if (playerSpeed < (slowRate * Time.fixedDeltaTime))
+            {
+                playerRigidbody.velocity = new Vector2(0, playerRigidbody.velocity.y);
+            }
+            else
+            {
+                playerRigidbody.velocity = new Vector2(playerRigidbody.velocity.x - (slowRate * Time.fixedDeltaTime * Mathf.Sign(playerRigidbody.velocity.x)), playerRigidbody.velocity.y);
+            }
+        }        
     }
 
     private void EvaluatePlayerDirection(float horizonatalInput)
