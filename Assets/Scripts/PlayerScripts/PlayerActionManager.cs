@@ -36,11 +36,11 @@ public class PlayerActionManager : MonoBehaviour {
     {
         pickup = newPickup;
         SetPickupTransform(newPickup);
-        DisableRigidbody(newPickup);
+        DisablePickupRigidbody(newPickup);
         newPickup.gameObject.tag = "Held";
     }
 
-    private void DisableRigidbody(GameObject newPickup)
+    private void DisablePickupRigidbody(GameObject newPickup)
     {
         newPickup.GetComponent<BoxCollider2D>().enabled = false;
         pickupsRigidBody = newPickup.GetComponent<Rigidbody2D>();
