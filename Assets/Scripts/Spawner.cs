@@ -7,16 +7,25 @@ public class Spawner : MonoBehaviour {
 	public Transform[] spawnLocations;
 	public GameObject[] whatToSpawnPrefab;
 	public GameObject[] whatToSpawnClone;
+	public bool spawning;
+	public float spawnDelay; 
 
 	void Start(){
-		startSpawning();
+		StartCoroutine("waitThreeSeconds");
 	}
 
 
 	void startSpawning(){
 
-		for(int i = 0; i< 10; i++){
-			whatToSpawnClone[0] = Instantiate(whatToSpawnPrefab[0], spawnLocations[0].transform.position, Quaternion.Euler(0,0,0)) as GameObject;
+		whatToSpawnClone[0] = Instantiate(whatToSpawnPrefab[0], spawnLocations[0].transform.position, Quaternion.Euler(0,0,0)) as GameObject;
+		
+	}
+
+	IEnumerator waitThreeSeconds(){
+		while (spawning){
+			yield return new WaitForSeconds(spawnDelay);
+			startSpawning();
 		}
+
 	}
 }
