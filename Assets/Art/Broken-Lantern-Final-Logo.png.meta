@@ -1,0 +1,526 @@
+fileFormatVersion: 2
+guid: 3034251aba56fbf4f8b0ab90429a045f
+timeCreated: 1500210163
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Broken-Lantern-Final-Logo_0
+    21300002: Broken-Lantern-Final-Logo_1
+    21300004: Broken-Lantern-Final-Logo_2
+    21300006: Broken-Lantern-Final-Logo_3
+    21300008: Broken-Lantern-Final-Logo_4
+    21300010: Broken-Lantern-Final-Logo_5
+    21300012: Broken-Lantern-Final-Logo_6
+    21300014: Broken-Lantern-Final-Logo_7
+    21300016: Broken-Lantern-Final-Logo_8
+    21300018: Broken-Lantern-Final-Logo_9
+    21300020: Broken-Lantern-Final-Logo_10
+    21300022: Broken-Lantern-Final-Logo_11
+    21300024: Broken-Lantern-Final-Logo_12
+    21300026: Broken-Lantern-Final-Logo_13
+    21300028: Broken-Lantern-Final-Logo_14
+    21300030: Broken-Lantern-Final-Logo_15
+    21300032: Broken-Lantern-Final-Logo_16
+    21300034: Broken-Lantern-Final-Logo_17
+    21300036: Broken-Lantern-Final-Logo_18
+    21300038: Broken-Lantern-Final-Logo_19
+  serializedVersion: 4
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -1
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 120, y: 275, z: 90, w: 190}
+  spritePixelsToUnits: 100
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: Standalone
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Broken-Lantern-Final-Logo_0
+      rect:
+        serializedVersion: 2
+        x: 193
+        y: 591
+        width: 416
+        height: 263
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Broken-Lantern-Final-Logo_1
+      rect:
+        serializedVersion: 2
+        x: 127
+        y: 516
+        width: 47
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Broken-Lantern-Final-Logo_2
+      rect:
+        serializedVersion: 2
+        x: 182
+        y: 516
+        width: 35
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Broken-Lantern-Final-Logo_3
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 517
+        width: 37
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Broken-Lantern-Final-Logo_4
+      rect:
+        serializedVersion: 2
+        x: 257
+        y: 516
+        width: 32
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Broken-Lantern-Final-Logo_5
+      rect:
+        serializedVersion: 2
+        x: 290
+        y: 516
+        width: 34
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Broken-Lantern-Final-Logo_6
+      rect:
+        serializedVersion: 2
+        x: 326
+        y: 514
+        width: 36
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Broken-Lantern-Final-Logo_7
+      rect:
+        serializedVersion: 2
+        x: 403
+        y: 516
+        width: 47
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Broken-Lantern-Final-Logo_8
+      rect:
+        serializedVersion: 2
+        x: 454
+        y: 517
+        width: 37
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Broken-Lantern-Final-Logo_9
+      rect:
+        serializedVersion: 2
+        x: 499
+        y: 514
+        width: 35
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Broken-Lantern-Final-Logo_10
+      rect:
+        serializedVersion: 2
+        x: 540
+        y: 515
+        width: 35
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Broken-Lantern-Final-Logo_11
+      rect:
+        serializedVersion: 2
+        x: 580
+        y: 515
+        width: 34
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Broken-Lantern-Final-Logo_12
+      rect:
+        serializedVersion: 2
+        x: 619
+        y: 515
+        width: 35
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Broken-Lantern-Final-Logo_13
+      rect:
+        serializedVersion: 2
+        x: 659
+        y: 514
+        width: 36
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Broken-Lantern-Final-Logo_14
+      rect:
+        serializedVersion: 2
+        x: 296
+        y: 447
+        width: 47
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Broken-Lantern-Final-Logo_15
+      rect:
+        serializedVersion: 2
+        x: 340
+        y: 447
+        width: 36
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Broken-Lantern-Final-Logo_16
+      rect:
+        serializedVersion: 2
+        x: 385
+        y: 447
+        width: 36
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Broken-Lantern-Final-Logo_17
+      rect:
+        serializedVersion: 2
+        x: 428
+        y: 447
+        width: 34
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Broken-Lantern-Final-Logo_18
+      rect:
+        serializedVersion: 2
+        x: 467
+        y: 447
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Broken-Lantern-Final-Logo_19
+      rect:
+        serializedVersion: 2
+        x: 278
+        y: 301
+        width: 239
+        height: 114
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    outline:
+    - - {x: -122, y: -116.5}
+      - {x: -124, y: -158.5}
+      - {x: -124, y: -232.5}
+      - {x: -122, y: -234.5}
+      - {x: 119, y: -234.5}
+      - {x: 119, y: -116.5}
+    - - {x: -55, y: -65.5}
+      - {x: -55, y: -63.5}
+      - {x: -58, y: -61.5}
+      - {x: -61, y: -60.5}
+      - {x: -81, y: -60.5}
+      - {x: -83, y: -66.5}
+      - {x: -79, y: -68.5}
+      - {x: -90, y: -74.5}
+      - {x: -82, y: -58.5}
+      - {x: -57, y: -56.5}
+      - {x: -61, y: -29.5}
+      - {x: -87, y: -29.5}
+      - {x: -106, y: -35.5}
+      - {x: -106, y: -85.5}
+      - {x: -99, y: -88.5}
+      - {x: -68, y: -88.5}
+      - {x: -66, y: -86.5}
+      - {x: -56, y: -68.5}
+    - - {x: -48, y: -47.5}
+      - {x: -62, y: -74.5}
+      - {x: -62, y: -88.5}
+      - {x: -22, y: -88.5}
+      - {x: -22, y: -64.5}
+      - {x: -30, y: -47.5}
+    - - {x: 23, y: -47.5}
+      - {x: -14, y: -47.5}
+      - {x: -17, y: -48.5}
+      - {x: -17, y: -88.5}
+      - {x: -10, y: -88.5}
+      - {x: -7, y: -85.5}
+      - {x: 3, y: -88.5}
+      - {x: 23, y: -88.5}
+    - - {x: 27, y: -51.5}
+      - {x: 26, y: -58.5}
+      - {x: 26, y: -88.5}
+      - {x: 64, y: -88.5}
+      - {x: 64, y: -48.5}
+      - {x: 30, y: -48.5}
+    - - {x: 93, y: -62.5}
+      - {x: 98, y: -62.5}
+      - {x: 105, y: -58.5}
+      - {x: 105, y: -56.5}
+      - {x: 104, y: -48.5}
+      - {x: 65, y: -48.5}
+      - {x: 65, y: -65.5}
+      - {x: 73, y: -70.5}
+      - {x: 65, y: -76.5}
+      - {x: 65, y: -81.5}
+      - {x: 72, y: -88.5}
+      - {x: 98, y: -88.5}
+      - {x: 105, y: -81.5}
+      - {x: 105, y: -71.5}
+      - {x: 102, y: -64.5}
+    - - {x: -145, y: 21.5}
+      - {x: -145, y: -21.5}
+      - {x: -36, y: -21.5}
+      - {x: -36, y: 20.5}
+      - {x: -37, y: 21.5}
+    - - {x: 97, y: 21.5}
+      - {x: 97, y: -16.5}
+      - {x: 99, y: -20.5}
+      - {x: 106, y: -18.5}
+      - {x: 106, y: 5.5}
+      - {x: 106, y: 3.5}
+      - {x: 117, y: -12.5}
+      - {x: 122, y: -21.5}
+      - {x: 131, y: -21.5}
+      - {x: 136, y: -19.5}
+      - {x: 136, y: 1.5}
+      - {x: 135, y: 16.5}
+      - {x: 132, y: 21.5}
+    - - {x: 293, y: 20.5}
+      - {x: 257, y: 20.5}
+      - {x: 257, y: -21.5}
+      - {x: 295, y: -21.5}
+      - {x: 297, y: -15.5}
+      - {x: 297, y: 10.5}
+      - {x: 294, y: 19.5}
+    - - {x: 138, y: 20.5}
+      - {x: 138, y: -8.5}
+      - {x: 143, y: -20.5}
+      - {x: 161, y: -20.5}
+      - {x: 164, y: -19.5}
+      - {x: 177, y: 12.5}
+      - {x: 177, y: 20.5}
+    - - {x: 180, y: 20.5}
+      - {x: 178, y: 18.5}
+      - {x: 178, y: -20.5}
+      - {x: 216, y: -20.5}
+      - {x: 216, y: 20.5}
+    - - {x: 220, y: 20.5}
+      - {x: 217, y: 17.5}
+      - {x: 217, y: -20.5}
+      - {x: 256, y: -20.5}
+      - {x: 256, y: 10.5}
+      - {x: 252, y: 20.5}
+    - - {x: -275, y: 39.5}
+      - {x: -275, y: -19.5}
+      - {x: -228, y: -19.5}
+      - {x: -224, y: -18.5}
+      - {x: -224, y: 39.5}
+    - - {x: -145, y: -12.5}
+      - {x: -145, y: 16.5}
+      - {x: -155, y: 21.5}
+      - {x: -219, y: 21.5}
+      - {x: -220, y: 15.5}
+      - {x: -220, y: -19.5}
+      - {x: -212, y: -19.5}
+      - {x: -209, y: -13.5}
+      - {x: -194, y: -19.5}
+      - {x: -148, y: -19.5}
+    - - {x: 48, y: -8.5}
+      - {x: 32, y: 36.5}
+      - {x: 29, y: 38.5}
+      - {x: 3, y: 38.5}
+      - {x: 1, y: 37.5}
+      - {x: 1, y: -19.5}
+      - {x: 50, y: -19.5}
+      - {x: 52, y: -17.5}
+      - {x: 52, y: -10.5}
+      - {x: 50, y: -8.5}
+    - - {x: 77, y: 22.5}
+      - {x: 71, y: 22.5}
+      - {x: 67, y: 21.5}
+      - {x: 52, y: -11.5}
+      - {x: 52, y: -18.5}
+      - {x: 93, y: -18.5}
+      - {x: 93, y: -8.5}
+      - {x: 91, y: 2.5}
+    - - {x: -29, y: 322.5}
+      - {x: -43, y: 319.5}
+      - {x: -209, y: 143.5}
+      - {x: -209, y: 79.5}
+      - {x: -204, y: 55.5}
+      - {x: 172, y: 55.5}
+      - {x: 211, y: 103.5}
+      - {x: 211, y: 156.5}
+      - {x: 42, y: 322.5}
+    physicsShape: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
