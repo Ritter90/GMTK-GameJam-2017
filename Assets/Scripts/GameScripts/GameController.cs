@@ -2,6 +2,7 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameController : MonoBehaviour
 {
@@ -24,14 +25,16 @@ public class GameController : MonoBehaviour
 
     public GameObject gameArea;
     
-
     public float arenaTransitionTime = 2f;
     public bool transistioning = false;
+
+    private bool isFinished = false;
+    public Text winText;
 
     void Awake()
     {
         currentArena = 2;
-
+        winText.text = "";
         foreach (Exit exit in exits)
         {
             exit.gameController = this;
@@ -77,7 +80,10 @@ public class GameController : MonoBehaviour
             default:
                 break;
         }
-
+        if(currentArena == 0 || currentArena == arenaData.Length - 1)
+        {
+            isFinished = true;
+        }
         MoveToArena(currentArena);
     }
 
@@ -127,7 +133,15 @@ public class GameController : MonoBehaviour
         }
         gameArea.transform.position = aimPosition;
         SpawnKey();
-        InputManager.active = true;
+        if(isFinished)
+        {
+            FinishGame();
+        }
+        else
+        {
+            InputManager.active = true;
+        }
+        
         transistioning = false;
     }
 
@@ -146,5 +160,17 @@ public class GameController : MonoBehaviour
         GameObject newKey = Instantiate(keyPrefab, keySpawner.position, Quaternion.Euler(0, 0, 0)) as GameObject;
         newKey.transform.parent = gameArea.transform;
         currentKey = newKey.GetComponent<AxeKey>();
+    }
+
+    private void FinishGame()
+    {
+        if(currentArena == 0)
+        {
+            winText.text = "All Hail King Chubb";
+        }
+        else
+        {
+            winText.text = "All Hail King Yale";
+        }
     }
 }

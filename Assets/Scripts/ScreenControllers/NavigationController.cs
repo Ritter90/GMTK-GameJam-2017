@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public static class NavigationController
 {
@@ -29,7 +30,7 @@ public static class NavigationController
 
     public static void PlayButtonClicked()
     {
-
+        SceneManager.LoadScene(1);
     }
 
     public static void CreditsButtonClicked()
