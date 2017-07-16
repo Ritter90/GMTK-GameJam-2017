@@ -4,6 +4,7 @@ public class MainMenuScreenController : BaseScreenController
 {
     public Button playButton;
     public Button creditsButton;
+    public Button quitButton;
 
     protected override void Awake()
     {
@@ -13,6 +14,7 @@ public class MainMenuScreenController : BaseScreenController
 
         playButton.onClick.AddListener(PlayButtonClicked);
         creditsButton.onClick.AddListener(CreditsButtonClicked);
+        quitButton.onClick.AddListener(QuitButtonClicked);
         
         gameObject.SetActive(false);
     }
@@ -25,5 +27,10 @@ public class MainMenuScreenController : BaseScreenController
     private void CreditsButtonClicked()
     {
         NavigationController.CreditsButtonClicked();
+    }
+
+    private void QuitButtonClicked()
+    {
+        NavigationController.QuitApplication();
     }
 }

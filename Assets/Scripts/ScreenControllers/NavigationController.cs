@@ -1,4 +1,6 @@
-﻿public static class NavigationController
+﻿using UnityEngine;
+
+public static class NavigationController
 {
     private static MainMenuScreenController mainMenu;
     private static CreditsScreenController credits;
@@ -43,5 +45,9 @@
         mainMenu.gameObject.SetActive(true);
     }
 
+    public static void QuitApplication()
+    {
+        Application.Quit();
+    }
 
 }
