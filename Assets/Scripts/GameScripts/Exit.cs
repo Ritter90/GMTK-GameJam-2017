@@ -9,19 +9,21 @@ public class Exit : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        Player player = other.GetComponent<Player>();
-
-        if (player != null)
+        if(gameController.transistioning == false)
         {
-            if (player.character == characterExit)
+            Player player = other.GetComponent<Player>();
+
+            if (player != null)
             {
-                gameController.ArenaWonBy(characterExit);
-            }
-            else
-            {
-                player.Kill();
+                if (player.character == characterExit)
+                {
+                    gameController.ArenaWonBy(characterExit);
+                }
+                else
+                {
+                    player.Kill();
+                }
             }
         }
     }
-
 }

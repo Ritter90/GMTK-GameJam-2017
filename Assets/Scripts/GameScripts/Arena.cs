@@ -12,4 +12,15 @@ public class Arena : MonoBehaviour
 
     public Transform yaleSpawnLocation;
     public Transform chubbSpawnLocation;
+    public Transform keySpawner;
+
+    public GameObject[] doors;
+
+    public void ResetDoors()
+    {
+        foreach (GameObject door in doors)
+        {
+            door.SetActive(true);
+        }
+    }
 }

@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using UnityEngine;
 
 public class GameController : MonoBehaviour
@@ -9,13 +10,21 @@ public class GameController : MonoBehaviour
     [SerializeField]
     private Player SirChubb;
 
+    [SerializeField]
+    private AxeKey currentKey;
+
     public Arena[] arenaData;
     public Exit[] exits;
-    private int currentArena;
+    public int currentArena;
+    private Transform keySpawner;
+    public GameObject keyPrefab;
+    public float keyRespawnTime = 1f;
 
     public GameObject gameArea;
+    
 
     public float arenaTransitionTime = 2f;
+    public bool transistioning = false;
 
     void Awake()
     {
@@ -27,6 +36,16 @@ public class GameController : MonoBehaviour
         }
         InputManager.active = true;
         SetPlayerSpawnLocations(currentArena);
+        SetKeySpawnLocation(currentArena);
+        SpawnKey();
+    }
+
+    void Update()
+    {
+        if(currentKey == null)
+        {
+            StartCoroutine(SpawnKeyAfterSeconds(keyRespawnTime));
+        }
     }
 
     public void ArenaWonBy(Player.Character character)
@@ -48,21 +67,15 @@ public class GameController : MonoBehaviour
 
     private void MoveToArena(int arenaNumber)
     {
+        transistioning = true;
         InputManager.active = false;
         SetPlayerSpawnLocations(arenaNumber);
+        SetKeySpawnLocation(arenaNumber);
         ResetPlayers();
-        SetExitsActive(false);
+        arenaData[arenaNumber].ResetDoors();
 
         StartCoroutine(TransitionToArena(arenaNumber));
 
-    }
-
-    private void SetExitsActive(bool active)
-    {
-        foreach (Exit exit in exits)
-        {
-            exit.gameObject.SetActive(active);
-        }
     }
 
     private void ResetPlayers()
@@ -77,6 +90,11 @@ public class GameController : MonoBehaviour
         SirYale.spawnLocation = arenaData[arenaNumber].yaleSpawnLocation;
     }
 
+    private void SetKeySpawnLocation(int arenaNumber)
+    {
+        keySpawner = arenaData[arenaNumber].keySpawner;
+    }
+
     IEnumerator TransitionToArena(int arenaNumber)
     {
         float startTime = Time.time;
@@ -89,8 +107,25 @@ public class GameController : MonoBehaviour
             yield return null;
         }
         gameArea.transform.position = aimPosition;
-        SetExitsActive(true);
+        SpawnKey();
         InputManager.active = true;
+        transistioning = false;
     }
 
+    IEnumerator SpawnKeyAfterSeconds(float waitTime)
+    {
+        yield return new WaitForSeconds(waitTime);
+        SpawnKey();
+    }
+
+    private void SpawnKey()
+    {
+        if(currentKey != null)
+        {
+            Destroy(currentKey.gameObject);
+        }
+        GameObject newKey = Instantiate(keyPrefab, keySpawner.position, Quaternion.Euler(0, 0, 0)) as GameObject;
+        newKey.transform.parent = gameArea.transform;
+        currentKey = newKey.GetComponent<AxeKey>();
+    }
 }
