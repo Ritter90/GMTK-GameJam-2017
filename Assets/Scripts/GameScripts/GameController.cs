@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour
 {
@@ -50,7 +51,17 @@ public class GameController : MonoBehaviour
                 spawnCoroutine = SpawnKeyAfterSeconds(keyRespawnTime);
                 StartCoroutine(spawnCoroutine);
             }
-        }        
+        } 
+        
+        if(Input.GetButtonDown("Cancel"))
+        {
+            SceneManager.LoadScene(0);
+        }
+
+        if(Input.GetButtonDown("Reset"))
+        {
+            SceneManager.LoadScene(1);
+        }
     }
 
     public void ArenaWonBy(Player.Character character)
@@ -84,7 +95,6 @@ public class GameController : MonoBehaviour
         arenaData[arenaNumber].ResetDoors();
         StopAllCoroutines();
         StartCoroutine(TransitionToArena(arenaNumber));
-
     }
 
     private void ResetPlayers()
