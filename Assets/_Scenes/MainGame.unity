@@ -971,7 +971,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 5
+  m_GravityScale: 4
   m_Material: {fileID: 6200000, guid: 876ef17ada3093f47ac1a1531f02d545, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -992,8 +992,8 @@ MonoBehaviour:
   moveForce: 50
   acceleration: 200
   slowRate: 150
-  maxSpeed: 10
-  jumpForce: 1000
+  maxSpeed: 5
+  jumpForce: 800
   jump: 0
   directionFlipThreshold: 0.01
   grounded: 0
@@ -4460,7 +4460,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 5
+  m_GravityScale: 4
   m_Material: {fileID: 6200000, guid: 876ef17ada3093f47ac1a1531f02d545, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -4481,8 +4481,8 @@ MonoBehaviour:
   moveForce: 50
   acceleration: 200
   slowRate: 150
-  maxSpeed: 10
-  jumpForce: 1000
+  maxSpeed: 5
+  jumpForce: 800
   jump: 0
   directionFlipThreshold: 0.01
   grounded: 0
