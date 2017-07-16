@@ -82,7 +82,7 @@ public class PlayerMovement : MonoBehaviour
         if(Mathf.Abs(playerRigidbody.velocity.x) > directionFlipThreshold)
         {
             Vector3 scale = transform.localScale;
-            scale.x = Mathf.Sign(playerRigidbody.velocity.x);
+            scale.x = Mathf.Sign(playerRigidbody.velocity.x) * Mathf.Abs(scale.x);
             transform.localScale = scale;
         }
     }
