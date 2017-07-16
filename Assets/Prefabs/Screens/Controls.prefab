@@ -118,7 +118,7 @@ MonoBehaviour:
 
     Movement- Directional Keys
 
-    Grab/Punch/Throw- Enter'
+    Pickup/Punch/Throw- Enter'
 --- !u!114 &114321525896690604
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -263,7 +263,7 @@ MonoBehaviour:
 
     Movement- WASD
 
-    Grab/Punch/Throw- Left Control'
+    Pickup/Punch/Throw- Left Control'
 --- !u!222 &222045544860328326
 CanvasRenderer:
   m_ObjectHideFlags: 1
