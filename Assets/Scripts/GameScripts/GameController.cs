@@ -113,8 +113,8 @@ public class GameController : MonoBehaviour
 
     private void ResetPlayers()
     {
-        SirChubb.Kill();
-        SirYale.Kill();
+        SirChubb.ResetToSpawn();
+        SirYale.ResetToSpawn();
     }
 
     private void SetPlayerSpawnLocations(int arenaNumber)

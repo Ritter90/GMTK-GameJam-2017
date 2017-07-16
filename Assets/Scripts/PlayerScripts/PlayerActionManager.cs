@@ -20,6 +20,11 @@ public class PlayerActionManager : MonoBehaviour {
 
     public Animator animator;
 
+    public AudioSource audioSource;
+
+    public AudioClip throwSound;
+    public AudioClip punchSound;
+
     public Vector2 ThrowForceVector
     {
         get { return new Vector2(throwForce * Mathf.Sign(gameObject.transform.localScale.x), 0); }
@@ -39,6 +44,7 @@ public class PlayerActionManager : MonoBehaviour {
     {
         playerInfo = GetComponent<Player>();
         animator = GetComponent<Animator>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     void Update ()
@@ -72,6 +78,7 @@ public class PlayerActionManager : MonoBehaviour {
     private void Punch()
     {
         animator.SetTrigger("punch");
+        audioSource.PlayOneShot(punchSound);
         RaycastHit2D hitInfo = Physics2D.Linecast(startPunch.position, endPunch.position, 1 << LayerMask.NameToLayer("Player"));
         
         if (hitInfo.collider != null)
@@ -103,6 +110,7 @@ public class PlayerActionManager : MonoBehaviour {
             pickup.transform.position = new Vector2(pickup.transform.position.x + (.5f * Mathf.Sign(gameObject.transform.localScale.x)), pickup.transform.position.y);
             pickup.GetComponent<Rigidbody2D>().AddForce(ThrowForceVector);
             animator.SetTrigger("punch");
+            audioSource.PlayOneShot(throwSound);
         }
         else
         {

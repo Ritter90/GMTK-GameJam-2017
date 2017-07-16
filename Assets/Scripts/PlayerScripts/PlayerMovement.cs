@@ -19,6 +19,7 @@ public class PlayerMovement : MonoBehaviour
 
     public Animator animator;
 
+
     void Awake()
     {
         groundCheck = transform.Find("groundCheck");
@@ -92,7 +93,6 @@ public class PlayerMovement : MonoBehaviour
         if (jump)
         {
             playerRigidbody.AddForce(Vector2.up * jumpForce);
-
             jump = false;
         }
     }
