@@ -17,6 +17,7 @@ public class GameController : MonoBehaviour
     public Exit[] exits;
     public int currentArena;
     private Transform keySpawner;
+    private IEnumerator spawnCoroutine;
     public GameObject keyPrefab;
     public float keyRespawnTime = 1f;
 
@@ -42,10 +43,14 @@ public class GameController : MonoBehaviour
 
     void Update()
     {
-        if(currentKey == null)
+        if(transistioning == false)
         {
-            StartCoroutine(SpawnKeyAfterSeconds(keyRespawnTime));
-        }
+            if (currentKey == null)
+            {
+                spawnCoroutine = SpawnKeyAfterSeconds(keyRespawnTime);
+                StartCoroutine(spawnCoroutine);
+            }
+        }        
     }
 
     public void ArenaWonBy(Player.Character character)
@@ -67,6 +72,10 @@ public class GameController : MonoBehaviour
 
     private void MoveToArena(int arenaNumber)
     {
+        if (currentKey != null)
+        {
+            Destroy(currentKey.gameObject);
+        }
         transistioning = true;
         InputManager.active = false;
         SetPlayerSpawnLocations(arenaNumber);
@@ -107,7 +116,7 @@ public class GameController : MonoBehaviour
             yield return null;
         }
         gameArea.transform.position = aimPosition;
-        SpawnKey();
+        //SpawnKey();
         InputManager.active = true;
         transistioning = false;
     }
