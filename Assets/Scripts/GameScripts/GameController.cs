@@ -31,8 +31,16 @@ public class GameController : MonoBehaviour
     private bool isFinished = false;
     public Text winText;
 
+    public AudioSource audioSource;
+    public AudioClip music;
+    public AudioClip allHailKingYale;
+    public AudioClip allHailKingChubb;
+
     void Awake()
     {
+        audioSource.clip = music;
+        audioSource.loop = true;
+        audioSource.Play();
         currentArena = 2;
         winText.text = "";
         foreach (Exit exit in exits)
@@ -167,10 +175,16 @@ public class GameController : MonoBehaviour
         if(currentArena == 0)
         {
             winText.text = "All Hail King Chubb";
+            audioSource.clip = allHailKingChubb;
+            audioSource.loop = false;
+            audioSource.Play();
         }
         else
         {
             winText.text = "All Hail King Yale";
+            audioSource.clip = allHailKingYale;
+            audioSource.loop = false;
+            audioSource.Play();
         }
     }
 }
