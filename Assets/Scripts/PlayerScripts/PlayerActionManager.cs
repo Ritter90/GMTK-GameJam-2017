@@ -12,7 +12,7 @@ public class PlayerActionManager : MonoBehaviour {
 
     private float throwForce = 500f;
     private float dropForce = 250f;
-    private float hitForce = 100f;
+    private float hitForce = 750f;
     private Player playerInfo;
 
     public Transform startPunch;
