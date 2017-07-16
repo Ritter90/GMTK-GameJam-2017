@@ -616,8 +616,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06b60150d9817c04b90cdbe0a5124705, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerNumber: 1
-  spawnLocation: {x: -7.5, y: -4, z: 0}
+  character: 0
+  spawnLocation: {fileID: 0}
 --- !u!212 &212063551371565402
 SpriteRenderer:
   m_ObjectHideFlags: 1

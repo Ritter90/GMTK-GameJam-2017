@@ -31,7 +31,7 @@ public class PlayerMovement : MonoBehaviour
     {
         grounded = Physics2D.Linecast(transform.position, groundCheck.position, 1 << LayerMask.NameToLayer("Ground"));
 
-        if(InputManager.GetJumpInput(playerInfo.playerNumber) && grounded)
+        if(InputManager.GetJumpInput(playerInfo.character) && grounded)
         {
             jump = true;
         }
@@ -39,7 +39,7 @@ public class PlayerMovement : MonoBehaviour
 
     void FixedUpdate()
     {
-        float horizonatalInput = InputManager.GetHorizontalInput(playerInfo.playerNumber);
+        float horizonatalInput = InputManager.GetHorizontalInput(playerInfo.character);
 
         MovePlayer(horizonatalInput);
         

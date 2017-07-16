@@ -43,7 +43,7 @@ public class PlayerActionManager : MonoBehaviour {
 
     void Update ()
     {
-        if (InputManager.GetActionInput(playerInfo.playerNumber))
+        if (InputManager.GetActionInput(playerInfo.character))
         {
             GameObject inRangePickup = getPickupInRange();
             if (pickup == null && inRangePickup != null)
