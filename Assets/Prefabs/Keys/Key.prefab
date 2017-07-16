@@ -99,6 +99,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c52a0b925c14a44f85a47ca47edb3f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioSource: {fileID: 0}
+  openDoor: {fileID: 8300000, guid: 2f2a1314629d87644bdd72a6890595ad, type: 3}
+  hitfloor: {fileID: 8300000, guid: c0d91e015876a25478886534dc8a0930, type: 3}
+  hitWall: {fileID: 8300000, guid: 6c05d1cd871dc784fb9fa00831789800, type: 3}
+  hitPlayer: {fileID: 8300000, guid: a1ecc82dcac915846a72639e7b39a380, type: 3}
 --- !u!212 &212612957559099626
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -129,7 +134,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1919084817
-  m_SortingLayer: 1
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 616fccf250a7076449eee6d5e3b0d75b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

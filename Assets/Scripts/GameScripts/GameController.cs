@@ -31,6 +31,11 @@ public class GameController : MonoBehaviour
     private bool isFinished = false;
     public Text winText;
 
+    public AudioSource audioSource;
+    public AudioClip music;
+    public AudioClip allHailKingYale;
+    public AudioClip allHailKingChubb;
+
     void Awake()
     {
         currentArena = 2;
@@ -105,8 +110,8 @@ public class GameController : MonoBehaviour
 
     private void ResetPlayers()
     {
-        SirChubb.Kill();
-        SirYale.Kill();
+        SirChubb.ResetToSpawn();
+        SirYale.ResetToSpawn();
     }
 
     private void SetPlayerSpawnLocations(int arenaNumber)
@@ -167,10 +172,18 @@ public class GameController : MonoBehaviour
         if(currentArena == 0)
         {
             winText.text = "All Hail King Chubb";
+            audioSource.Stop();
+            audioSource.clip = allHailKingChubb;
+            audioSource.loop = false;
+            audioSource.Play();
         }
         else
         {
             winText.text = "All Hail King Yale";
+            audioSource.Stop();
+            audioSource.clip = allHailKingYale;
+            audioSource.loop = false;
+            audioSource.Play();
         }
     }
 }
