@@ -82,7 +82,7 @@ public class GameController : MonoBehaviour
         SetKeySpawnLocation(arenaNumber);
         ResetPlayers();
         arenaData[arenaNumber].ResetDoors();
-
+        StopAllCoroutines();
         StartCoroutine(TransitionToArena(arenaNumber));
 
     }
@@ -116,7 +116,7 @@ public class GameController : MonoBehaviour
             yield return null;
         }
         gameArea.transform.position = aimPosition;
-        //SpawnKey();
+        SpawnKey();
         InputManager.active = true;
         transistioning = false;
     }
