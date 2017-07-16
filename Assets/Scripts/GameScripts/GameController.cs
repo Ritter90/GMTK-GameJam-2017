@@ -38,9 +38,6 @@ public class GameController : MonoBehaviour
 
     void Awake()
     {
-        audioSource.clip = music;
-        audioSource.loop = true;
-        audioSource.Play();
         currentArena = 2;
         winText.text = "";
         foreach (Exit exit in exits)
@@ -175,6 +172,7 @@ public class GameController : MonoBehaviour
         if(currentArena == 0)
         {
             winText.text = "All Hail King Chubb";
+            audioSource.Stop();
             audioSource.clip = allHailKingChubb;
             audioSource.loop = false;
             audioSource.Play();
@@ -182,6 +180,7 @@ public class GameController : MonoBehaviour
         else
         {
             winText.text = "All Hail King Yale";
+            audioSource.Stop();
             audioSource.clip = allHailKingYale;
             audioSource.loop = false;
             audioSource.Play();
