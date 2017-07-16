@@ -12,11 +12,13 @@ public class PlayerActionManager : MonoBehaviour {
 
     private float throwForce = 500f;
     private float dropForce = 250f;
-    private float hitForce = 500f;
+    private float hitForce = 100f;
     private Player playerInfo;
 
     public Transform startPunch;
     public Transform endPunch;
+
+    public Animator animator;
 
     public Vector2 ThrowForceVector
     {
@@ -36,6 +38,7 @@ public class PlayerActionManager : MonoBehaviour {
     void Awake()
     {
         playerInfo = GetComponent<Player>();
+        animator = GetComponent<Animator>();
     }
 
     void Update ()
@@ -68,6 +71,7 @@ public class PlayerActionManager : MonoBehaviour {
 
     private void Punch()
     {
+        animator.SetTrigger("punch");
         RaycastHit2D hitInfo = Physics2D.Linecast(startPunch.position, endPunch.position, 1 << LayerMask.NameToLayer("Player"));
         
         if (hitInfo.collider != null)
@@ -78,6 +82,7 @@ public class PlayerActionManager : MonoBehaviour {
                 hittable.Hit(HitForceVector);
             }
         }
+        
     }
 
     private void OnCollisionEnter2D(Collision2D coll)
@@ -97,10 +102,11 @@ public class PlayerActionManager : MonoBehaviour {
         {
             pickup.transform.position = new Vector2(pickup.transform.position.x + (.5f * Mathf.Sign(gameObject.transform.localScale.x)), pickup.transform.position.y);
             pickup.GetComponent<Rigidbody2D>().AddForce(ThrowForceVector);
+            animator.SetTrigger("punch");
         }
         else
         {
-            pickup.transform.position = new Vector2(pickup.transform.position.x, pickup.transform.position.y + .5f);
+            pickup.transform.position = new Vector2(pickup.transform.position.x, pickup.transform.position.y + 1f);
             pickup.GetComponent<Rigidbody2D>().AddForce(DropForceVector);
         }
         

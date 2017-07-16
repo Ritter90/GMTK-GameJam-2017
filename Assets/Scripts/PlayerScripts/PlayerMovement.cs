@@ -17,11 +17,14 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody2D playerRigidbody;
     private Player playerInfo;
 
+    public Animator animator;
+
     void Awake()
     {
         groundCheck = transform.Find("groundCheck");
         playerRigidbody = GetComponent<Rigidbody2D>();
         playerInfo = GetComponent<Player>();
+        animator = GetComponent<Animator>();
     }
 
     void Update()
@@ -39,7 +42,7 @@ public class PlayerMovement : MonoBehaviour
         float horizonatalInput = InputManager.GetHorizontalInput(playerInfo.playerNumber);
 
         MovePlayer(horizonatalInput);
-
+        
         EvaluatePlayerDirection(horizonatalInput);
 
         EvaluateJump();
@@ -48,7 +51,7 @@ public class PlayerMovement : MonoBehaviour
     private void MovePlayer(float horizonatalInput)
     {
         float playerSpeed = Mathf.Abs(playerRigidbody.velocity.x);
-
+        
         if (horizonatalInput != 0)
         {
             if (Mathf.Abs(playerRigidbody.velocity.x + (acceleration * Time.fixedDeltaTime * horizonatalInput)) > maxSpeed)
@@ -70,7 +73,8 @@ public class PlayerMovement : MonoBehaviour
             {
                 playerRigidbody.velocity = new Vector2(playerRigidbody.velocity.x - (slowRate * Time.fixedDeltaTime * Mathf.Sign(playerRigidbody.velocity.x)), playerRigidbody.velocity.y);
             }
-        }        
+        }
+        animator.SetFloat("velocity", Mathf.Abs(playerRigidbody.velocity.x));
     }
 
     private void EvaluatePlayerDirection(float horizonatalInput)
