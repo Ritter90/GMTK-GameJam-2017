@@ -5,7 +5,7 @@ public static class NavigationController
     private static MainMenuScreenController mainMenu;
     private static CreditsScreenController credits;
     private static IntroScrollerController isc;
-
+    private static ControlInfoScreenController controls;
 
     public static MainMenuScreenController MainMenu
     {
@@ -22,6 +22,11 @@ public static class NavigationController
         set { isc = value;}
     }
 
+    public static ControlInfoScreenController Controls
+    {
+        set { controls = value; }
+    }
+
     public static void PlayButtonClicked()
     {
 
@@ -33,6 +38,12 @@ public static class NavigationController
         credits.gameObject.SetActive(true);
     }
 
+    public static void ControlsButtonClicked()
+    {
+        mainMenu.gameObject.SetActive(false);
+        controls.gameObject.SetActive(true);
+    }
+
     public static void LeaveCreditsScreen()
     {
         credits.gameObject.SetActive(false);
@@ -42,6 +53,12 @@ public static class NavigationController
     public static void LeaveIntroScroller()
     {
         isc.gameObject.SetActive(false);
+        mainMenu.gameObject.SetActive(true);
+    }
+
+    public static void LeaveControlInfoScreen()
+    {
+        controls.gameObject.SetActive(false);
         mainMenu.gameObject.SetActive(true);
     }
 

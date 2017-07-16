@@ -3,6 +3,7 @@
 public class MainMenuScreenController : BaseScreenController
 {
     public Button playButton;
+    public Button controlsButton;
     public Button creditsButton;
     public Button quitButton;
 
@@ -13,6 +14,7 @@ public class MainMenuScreenController : BaseScreenController
         NavigationController.MainMenu = this;
 
         playButton.onClick.AddListener(PlayButtonClicked);
+        controlsButton.onClick.AddListener(ControlsButtonClicked);
         creditsButton.onClick.AddListener(CreditsButtonClicked);
         quitButton.onClick.AddListener(QuitButtonClicked);
         
@@ -22,6 +24,11 @@ public class MainMenuScreenController : BaseScreenController
     private void PlayButtonClicked()
     {
         NavigationController.PlayButtonClicked();
+    }
+
+    private void ControlsButtonClicked()
+    {
+        NavigationController.ControlsButtonClicked();
     }
 
     private void CreditsButtonClicked()
