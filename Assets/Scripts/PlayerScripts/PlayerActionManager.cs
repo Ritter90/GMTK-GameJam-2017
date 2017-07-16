@@ -18,6 +18,8 @@ public class PlayerActionManager : MonoBehaviour {
     public Transform startPunch;
     public Transform endPunch;
 
+    public Animator animator;
+
     public Vector2 ThrowForceVector
     {
         get { return new Vector2(throwForce * Mathf.Sign(gameObject.transform.localScale.x), 0); }
@@ -36,6 +38,7 @@ public class PlayerActionManager : MonoBehaviour {
     void Awake()
     {
         playerInfo = GetComponent<Player>();
+        animator = GetComponent<Animator>();
     }
 
     void Update ()
@@ -68,6 +71,7 @@ public class PlayerActionManager : MonoBehaviour {
 
     private void Punch()
     {
+        animator.SetTrigger("punch");
         RaycastHit2D hitInfo = Physics2D.Linecast(startPunch.position, endPunch.position, 1 << LayerMask.NameToLayer("Player"));
         
         if (hitInfo.collider != null)
@@ -78,6 +82,7 @@ public class PlayerActionManager : MonoBehaviour {
                 hittable.Hit(HitForceVector);
             }
         }
+        
     }
 
     private void OnCollisionEnter2D(Collision2D coll)
